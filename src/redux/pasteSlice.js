@@ -13,6 +13,9 @@ export const pasteSlice = createSlice({
   initialState,
   reducers: {
    addToPastes: (state,action) =>{
+    const paste = action.payload;
+    state.pastes.push(paste);
+    localStorage.setItem("pastes",state.pastes);
     
    },
    UpdateToPastes: (state,action) => {
